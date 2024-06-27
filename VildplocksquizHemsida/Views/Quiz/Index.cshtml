@@ -1,0 +1,51 @@
+@model VildplocksquizHemsida.Models.QuizQuestion
+
+@{
+    ViewData["Title"] = "Quiz";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Quiz</h1>
+@if (ViewBag.NoQuestions != null && ViewBag.NoQuestions == true)
+{
+    <p>No questions available.</p>
+}
+else if (Model != null)
+{
+    <div id="quiz-frame">
+        <img src="@Model.ImageUrl" alt="Quiz Image" />
+        <form asp-action="SubmitAnswer" method="post" id="quiz-form">
+            <input type="hidden" name="id" value="@Model.Id" />
+            <input type="text" name="answer" placeholder="Gissa namnet" />
+            <div>
+                <button type="submit">Gissa</button>
+            </div>
+        </form>
+        @if (ViewBag.Result != null)
+        {
+            <p id="result">@ViewBag.Result</p>
+        }
+        <form asp-action="NextQuestion" method="post">
+            <button type="submit">Nästa bild</button>
+        </form>
+    </div>
+}
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var result = "@ViewBag.Result";
+        var body = document.body;
+
+        if (result.includes("Korrekt!")) {
+            body.classList.add("correct-background");
+        } else if (result.includes("Fel")) {
+            body.classList.add("incorrect-background");
+        }
+
+        // Remove the background color on the next question button click
+        document.querySelector('form[asp-action="NextQuestion"]').addEventListener('submit', function () {
+            body.classList.remove("correct-background");
+            body.classList.remove("incorrect-background");
+        });
+    });
+</script>
