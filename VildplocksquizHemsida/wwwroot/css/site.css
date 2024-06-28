@@ -6,7 +6,7 @@ body {
   align-items: center;
   height: 100vh;
   margin: 0;
-  background-color: lemonchiffon; /* Default background color */
+  background-color: lemonchiffon; 
 }
 
 /* Conditional background colors */
@@ -24,7 +24,7 @@ main {
   max-width: 600px;
   padding: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  background-color: white; /* Default background color for the main container */
+  background-color: white; 
   border-radius: 8px;
   text-align: center;
 }
@@ -34,13 +34,14 @@ img {
   max-width: 100%;
   height: auto;
   max-height: 300px; /* Limit the vertical height of the image */
-  margin-bottom: 20px;
+  margin-bottom: 10px; /* Reduce the bottom margin */
 }
 
 form {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 5px;
 }
 
 input[type="text"] {
@@ -67,7 +68,8 @@ button:hover {
 }
 
 p {
-  margin-top: 20px;
+  margin-top: 5px; /* Reduce the top margin */
+  margin-bottom: 0; /* Ensure no bottom margin */
   font-size: 16px;
 }
 
