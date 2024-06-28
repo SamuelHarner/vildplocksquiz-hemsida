@@ -16,7 +16,7 @@ else if (Model != null)
         <p>Credit: @Model.Credit</p>
         <p>License: <a href="@Model.License" target="_blank">@Model.License</a></p>
         
-        <form asp-action="SubmitAnswer" method="post" id="quiz-form" style="position: relative; display: inline-block;">
+        <form asp-action="SubmitAnswer" method="post" id="quiz-form" style="position: relative; display: inline-block; margin-top: 10px;">
             <input type="hidden" name="id" value="@Model.Id" />
             <input type="text" name="answer" placeholder="Gissa namnet" style="display: block; margin: 0 auto 10px auto;" />
             <div style="display: inline-block; position: relative;">
