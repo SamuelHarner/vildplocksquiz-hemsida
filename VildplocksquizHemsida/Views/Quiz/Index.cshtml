@@ -5,7 +5,6 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Quiz</h1>
 @if (ViewBag.NoQuestions != null && ViewBag.NoQuestions == true)
 {
     <p>No questions available.</p>
@@ -14,6 +13,9 @@ else if (Model != null)
 {
     <div id="quiz-frame">
         <img src="@Model.ImageUrl" alt="Quiz Image" />
+        <p>Credit: @Model.Credit</p>
+        <p>License: <a href="@Model.License" target="_blank">@Model.License</a></p>
+        
         <form asp-action="SubmitAnswer" method="post" id="quiz-form">
             <input type="hidden" name="id" value="@Model.Id" />
             <input type="text" name="answer" placeholder="Gissa namnet" />
@@ -36,7 +38,7 @@ else if (Model != null)
         var result = "@ViewBag.Result";
         var body = document.body;
 
-        if (result.includes("Korrekt!")) {
+        if (result.includes("Korrekt")) {
             body.classList.add("correct-background");
         } else if (result.includes("Fel")) {
             body.classList.add("incorrect-background");

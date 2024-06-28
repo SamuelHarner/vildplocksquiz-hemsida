@@ -1,3 +1,4 @@
+/* General body styling */
 body {
   font-family: Arial, sans-serif;
   display: flex;
@@ -5,27 +6,30 @@ body {
   align-items: center;
   height: 100vh;
   margin: 0;
-  background-color: #fff; /* Default background color */
+  background-color: lightgoldenrodyellow !important; /* Default background color */
 }
 
+/* Conditional background colors */
 .correct-background {
-  background-color: lightgreen;
+  background-color: lightgreen !important;
 }
 
 .incorrect-background {
-  background-color: lightcoral;
+  background-color: lightcoral !important;
 }
 
+/* Main container styling */
 main {
   width: 100%;
   max-width: 600px;
   padding: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  background-color: #fff; /* Default background color for the main container */
+  background-color: lightgoldenrodyellow; /* Default background color for the main container */
   border-radius: 8px;
   text-align: center;
 }
 
+/* Additional styles */
 img {
   max-width: 100%;
   height: auto;
@@ -65,4 +69,51 @@ button:hover {
 p {
   margin-top: 20px;
   font-size: 16px;
+}
+
+/* Additional styles from the original CSS */
+a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+a {
+  color: #0077cc;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.border-top {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 60px;
 }

@@ -24,15 +24,10 @@ using (var scope = app.Services.CreateScope())
     if (!context.QuizQuestions.Any())
     {
         context.QuizQuestions.AddRange(
-            new QuizQuestion { Id = 1, ImageUrl = "/images/maskros_1.jpg", Answer = "maskros" },
-            new QuizQuestion { Id = 2, ImageUrl = "/images/maskros_2.jpg", Answer = "maskros" },
-            new QuizQuestion { Id = 3, ImageUrl = "/images/rödklöver_1.jpg", Answer = "rödklöver" },
-            new QuizQuestion { Id = 4, ImageUrl = "/images/rödklöver_2.jpg", Answer = "rödklöver" },
-            new QuizQuestion { Id = 5, ImageUrl = "/images/daggkåpa_1.jpg", Answer = "daggkåpa" },
-            new QuizQuestion { Id = 6, ImageUrl = "/images/daggkåpa_2.jpg", Answer = "daggkåpa" },
-            new QuizQuestion { Id = 7, ImageUrl = "/images/stensopp_1.jpg", Answer = "stensopp" },
-            new QuizQuestion { Id = 8, ImageUrl = "/images/stensopp_2.jpg", Answer = "stensopp" },
-            new QuizQuestion { Id = 9, ImageUrl = "/images/kantarell_1.jpg", Answer = "kantarell" }
+            new QuizQuestion { Id = 1, ImageUrl = "/images/maskros_1.jpg", Answer = "maskros", Credit = "David Monniaux", License = "https://creativecommons.org/licenses/by-sa/3.0/" },
+            new QuizQuestion { Id = 2, ImageUrl = "/images/maskros_2.jpg", Answer = "maskros", Credit = "Green Yoshi", License = "https://creativecommons.org/licenses/by-sa/3.0/" },
+            new QuizQuestion { Id = 3, ImageUrl = "/images/rödklöver_1.jpg", Answer = "rödklöver", Credit = "Ivar Leidus", License = "https://creativecommons.org/licenses/by-sa/4.0/" },
+            new QuizQuestion { Id = 4, ImageUrl = "/images/rödklöver_2.jpg", Answer = "rödklöver", Credit = "Tony Wills", License = "https://creativecommons.org/licenses/by/2.5/"}
         );
         context.SaveChanges();
     }

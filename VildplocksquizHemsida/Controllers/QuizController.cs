@@ -39,7 +39,7 @@ namespace VildplocksquizHemsida.Controllers
             }
             else
             {
-                ViewBag.Result = $"Fel. Svaret var: {question.Answer}";
+                ViewBag.Result = $"Fel. Svaret är: {question.Answer}";
             }
 
             return View("Index", question);
