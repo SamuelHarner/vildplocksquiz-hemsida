@@ -11,23 +11,21 @@
 }
 else if (Model != null)
 {
-    <div id="quiz-frame">
+    <div id="quiz-frame" style="width: 100%; max-width: 600px; margin: auto; text-align: center;">
         <img src="@Model.ImageUrl" alt="Quiz Image" />
         <p>Credit: @Model.Credit</p>
         <p>License: <a href="@Model.License" target="_blank">@Model.License</a></p>
         
-        <form asp-action="SubmitAnswer" method="post" id="quiz-form">
+        <form asp-action="SubmitAnswer" method="post" id="quiz-form" style="position: relative; display: inline-block;">
             <input type="hidden" name="id" value="@Model.Id" />
-            <input type="text" name="answer" placeholder="Gissa namnet" />
-            <div>
-                <button type="submit">Gissa</button>
+            <input type="text" name="answer" placeholder="Gissa namnet" style="display: block; margin: 0 auto 10px auto;" />
+            <div style="display: inline-block; position: relative;">
+                <button type="submit" style="position: relative; z-index: 1;">Gissa</button>
+                <p id="result" style="position: absolute; left: 100%; top: 50%; transform: translateY(-50%); margin-left: 10px; white-space: nowrap;">@ViewBag.Result</p>
             </div>
         </form>
-        @if (ViewBag.Result != null)
-        {
-            <p id="result">@ViewBag.Result</p>
-        }
-        <form asp-action="NextQuestion" method="post">
+        
+        <form asp-action="NextQuestion" method="post" style="margin-top: 10px;">
             <button type="submit">Nästa bild</button>
         </form>
     </div>
