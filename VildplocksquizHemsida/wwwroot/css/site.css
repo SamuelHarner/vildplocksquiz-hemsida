@@ -24,7 +24,7 @@ main {
   max-width: 600px;
   padding: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  background-color: lightgoldenrodyellow; /* Default background color for the main container */
+  background-color: white; /* Default background color for the main container */
   border-radius: 8px;
   text-align: center;
 }
